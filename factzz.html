@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aldabra Giant Tortoise Fact</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            border: 2px solid #007acc;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007acc;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #005f99;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Aldabra Giant Tortoise Fact</h1>
+        <p id="fact"></p>
+        <button id="nextFact">Next Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "The Aldabra giant tortoise (Aldabrachelys gigantea) is one of the largest tortoise species and is native to the Aldabra Atoll in the Seychelles.",
+            "Aldabra giant tortoises are known for their incredible lifespan, with some individuals living over 150 years. The oldest recorded tortoise, named Adwaita, was believed to have lived for around 255 years.",
+            "These tortoises grow slowly, reaching maturity at around 30 to 40 years of age. Their slow metabolism contributes to their long lifespan.",
+            "Aldabra giant tortoises are herbivores, primarily feeding on grasses, leaves, and fruits. They play a crucial role in their ecosystem by helping to maintain vegetation.",
+            "The species is classified as vulnerable due to habitat loss and human activities. Conservation efforts are in place to protect their natural habitat and ensure their survival.",
+            "Aldabra giant tortoises can weigh between 150 to 250 kilograms (330 to 550 pounds) and have a shell length of up to 1.2 meters (4 feet).",
+            "Female tortoises lay eggs in nests dug into the ground. The eggs typically hatch after about 100 days, and the hatchlings are vulnerable to predators.",
+            "While generally solitary, Aldabra giant tortoises can be seen interacting with each other, especially during the mating season. They communicate through vocalizations and body language.",
+            "These tortoises have adapted to their environment with thick, scaly skin that helps prevent water loss, allowing them to survive in arid conditions.",
+            "Aldabra giant tortoises have cultural significance in the Seychelles and are often seen as symbols of longevity and resilience. They attract tourists and researchers interested in their unique biology and ecology."
+        ];
+
+        let currentFactIndex = 0;
+
+        function displayFact() {
+            document.getElementById('fact').innerText = facts[currentFactIndex];
+        }
+
+        document.getElementById('nextFact').addEventListener('click', () => {
+            currentFactIndex = (currentFactIndex + 1) % facts.length;
+            displayFact();
+        });
+
+        // Display the first fact on page load
+        displayFact();
+    </script>
+</body>
+</html>

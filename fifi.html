@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evil Eye Fact</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            border: 2px solid #007acc;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007acc;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #005f99;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Evil Eye Fact</h1>
+        <p id="fact"></p>
+        <button id="nextFact">Next Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "The evil eye, known as 'mati' in Greek, is a belief that certain individuals can cause harm or misfortune to others through a malevolent glare or envious look.",
+            "The evil eye is deeply rooted in Greek culture and is often associated with jealousy and envy. It is believed that someone who is envious can cast the evil eye unintentionally.",
+            "To ward off the evil eye, Greeks often use protective symbols, such as the 'mati' amulet, which is typically a blue eye-shaped charm.",
+            "Many Greeks will perform rituals or carry talismans to protect themselves from the evil eye.",
+            "In some traditions, a 'kleidi' (key) is used in rituals to break the spell of the evil eye.",
+            "Symptoms of being affected by the evil eye can include sudden illness, fatigue, or a general sense of malaise.",
+            "There are various cleansing rituals in Greek culture to remove the effects of the evil eye.",
+            "The concept of the evil eye has ancient roots in various cultures around the Mediterranean and beyond.",
+            "While the belief in the evil eye remains prevalent, modern interpretations often view it as a metaphor for the negative effects of jealousy and envy.",
+            "The evil eye has been a subject of interest in Greek literature and art, showcasing its significance in Greek folklore."
+        ];
+
+        let currentFactIndex = 0;
+
+        function displayFact() {
+            document.getElementById('fact').innerText = facts[currentFactIndex];
+        }
+
+        document.getElementById('nextFact').addEventListener('click', () => {
+            currentFactIndex = (currentFactIndex + 1) % facts.length;
+            displayFact();
+        });
+
+        // Display the first fact on page load
+        displayFact();
+    </script>
+</body>
+</html>
